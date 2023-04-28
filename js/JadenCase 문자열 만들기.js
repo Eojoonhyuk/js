@@ -7,5 +7,3 @@ const solution = (s) => {
 
     return answer;
 }
-
-
