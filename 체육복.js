@@ -1,7 +1,14 @@
-const solution = (n, lost, reserve) => {
-  let answer = 0;
+function solution(n, lost, reserve) {
+  let lost_student = lost.filter((v) => !reserve.includes(v)).sort();
+  let reserve_student = reserve.filter((v) => !lost.includes(v)).sort();
 
-  return console.log(answer);
-};
+  for (let i = 0; i < reserve_student.length; i++) {
+    if (lost_student.includes(reserve_student[i] - 1)) {
+      lost_student = lost_student.filter((v) => v !== reserve_student[i] - 1);
+    } else if (lost_student.includes(reserve_student[i] + 1)) {
+      lost_student = lost_student.filter((v) => v !== reserve_student[i] + 1);
+    }
+  }
 
-solution(5, [2, 4], [1, 3, 5]);
+  return n - lost_student.length;
+}
