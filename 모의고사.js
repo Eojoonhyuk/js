@@ -18,5 +18,5 @@ function solution(answers) {
       index++;
     }
   }
-  return result;
+  return answer;
 }
