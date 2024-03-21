@@ -1,7 +1,7 @@
 function solution(n, m, sections) {
-  var answer = 0;
-  var painted = 0;
-  for (var section of sections) {
+  let answer = 0;
+  let painted = 0;
+  for (let section of sections) {
     if (painted < section) {
       answer++;
       painted = section + m - 1;
